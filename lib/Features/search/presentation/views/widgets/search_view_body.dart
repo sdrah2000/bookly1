@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../core/utils/styles.dart';
+import '../../../../home/presentation/views/widgets/best_seller_list_view.dart';
 import '../../../../home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'custom_search_text_field.dart';
 
@@ -49,7 +50,7 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: BookListViewItem(),
+          child: BestSellerListView(books: [],),
         );
       },
     );

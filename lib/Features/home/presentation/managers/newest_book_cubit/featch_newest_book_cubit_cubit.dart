@@ -9,7 +9,12 @@ part 'featch_newest_book_cubit_state.dart';
 class FeatchNewestBookCubitCubit extends Cubit<FeatchNewestBookCubitState> {
   FeatchNewestBookCubitCubit(this.featuredBooksUseCase) : super(FeatchNewestBookCubitInitial());
    final FetchNewestBooksUseCase featuredBooksUseCase;
-  Future<void> fetchNewestBook() async {
+  Future<void> fetchNewestBook({int pageNumber=0}) async {
+    if (pageNumber==0){
+      emit(FetchNewestBookLoading());
+    }else{
+      emit(FetchNewestBookLoading());
+    }
     emit(FetchNewestBookLoading());
     var result = await featuredBooksUseCase.call();
     result.fold((failure) {
